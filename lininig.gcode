@@ -1,0 +1,74 @@
+G90
+M83
+; **** Replicator 2X start.gcode ****
+M73 P0 ; Enable build progress
+G162 X Y F3000 ; Home XY maximum
+G161 Z F1200 ; Home Z minimum
+G92 Z-5 ; Set Z to -5
+G1 Z0 ; Move Z to 0
+G161 Z F100 ; Home Z slowly
+M132 X Y Z A B ; Recall home offsets
+M135 T0 ; Load right extruder offsets
+G1 X-130 Y-75 Z30 F9000 ; Move to wait position off table
+G130 X20 Y20 Z20 A20 B20 ; Lower stepper Vrefs while heating
+M127 ; Set fan speed
+M104 S190 T0 ; Heat right extruder
+M133 T0 ; Stabilize extruder temperature
+G130 X127 Y127 Z40 A127 B127 ; Default stepper Vref
+G92 A0 B0 ; Zero extruders
+G1 X100 Y-70 F9000 ; Move to front right corner of bed
+G1 Z0.3 F6000 ; Move down to purge
+G1 X-90 Y-70 E24 F2000 ; Extrude a line of filament across the front edge of the bed
+G1 X-100 Y-70 F180 ; Wait for ooze
+G1 X-110 Y-70 F5000 ; Fast wipe
+G1 Z0.5 F100 ; Lift
+G92 A0 B0 ; Zero extruders
+M73 P1 ;@body (notify GPX body has started)
+; **** end of start.gcode ****
+G1 E-1.0000 F1200
+
+G1 E-1.0 F1200
+G1 Z8.0 E0.0 F3000
+; layer1 
+G1 X-204.971 Y-158.129 Z0.100 E0.0000 F2000
+G1 X89.679 Y-242.779 Z0.100 E19.3138 F2000
+G1 X102.579 Y-180.629 Z0.100 E3.9989 F2000
+G1 X-188.921 Y-109.929 Z0.100 E18.8969 F2000
+G1 X-189.971 Y-74.579 Z0.100 E2.2280 F2000
+G1 X142.229 Y-71.329 Z0.100 E20.9296 F2000
+G1 X114.329 Y-4.879 Z0.100 E4.5404 F2000
+G1 X-142.821 Y78.671 Z0.100 E17.0341 F2000
+G1 X-142.821 Y78.671 Z0.100 E0.0000 F2000
+G1 X134.729 Y89.421 Z0.100 E17.4988 F2000
+G1 X134.729 Y89.421 Z0.100 E0.0000 F2000
+G1 X-92.471 Y193.321 Z0.100 E15.7393 F2000
+G1 X-92.471 Y193.321 Z0.100 E0.0000 F2000
+G1 X336.179 Y119.421 Z0.100 E27.4033 F2000
+
+G1 E-1.0 F1200
+G1 Z8.0 E0.0 F3000
+; layer2 
+G1 X-204.971 Y-158.129 Z0.200 E0.0000 F2000
+G1 X89.679 Y-242.779 Z0.200 E19.3138 F2000
+G1 X102.579 Y-180.629 Z0.200 E3.9989 F2000
+G1 X-188.921 Y-109.929 Z0.200 E18.8969 F2000
+G1 X-189.971 Y-74.579 Z0.200 E2.2280 F2000
+G1 X142.229 Y-71.329 Z0.200 E20.9296 F2000
+G1 X114.329 Y-4.879 Z0.200 E4.5404 F2000
+G1 X-142.821 Y78.671 Z0.200 E17.0341 F2000
+G1 X-142.821 Y78.671 Z0.200 E0.0000 F2000
+G1 X134.729 Y89.421 Z0.200 E17.4988 F2000
+G1 X134.729 Y89.421 Z0.200 E0.0000 F2000
+G1 X-92.471 Y193.321 Z0.200 E15.7393 F2000
+G1 X-92.471 Y193.321 Z0.200 E0.0000 F2000
+G1 X336.179 Y119.421 Z0.200 E27.4033 F2000
+; layer end
+; **** Replicator 2X end.gcode ****
+M73 P100 ; end build progress
+G1 Z155 F1000 ; send Z axis to bottom of machine
+M104 S0 T0 ; cool down right extruder
+M127 ; stop blower fan
+G162 X Y F3000 ; home XY maximum
+M18 ; disable stepper
+M72 P1 ; play Ta-Da song
+; **** end of end.gcode ****

@@ -1,0 +1,7 @@
+{
+	"z_offset": 0.0, 
+	"n_layers": 2, 
+	"layer_thickness": 0.1, 
+	"printing_speed": 2000, 
+	"extrusion_ratio": 10.0
+}

@@ -1,0 +1,14 @@
+-
+  m : 50
+  n : 44
+  gap : 1.2
+  visualize : False
+  x : 100
+  y : 100
+  z_offset: 0.05
+  n_layers : 6
+  layer_thickness_default: [0.08, 0.06, 0.06, 0.06, 0.06, 0.06]
+  E_ratio_default: [0.126, 0.126, 0.126, 0.126, 0.126, 0.126]
+  F_default: [3600, 3600, 3600, 3600, 3600, 3600]
+  fan_default: [255, 255, 255, 255, 255, 255]
+
