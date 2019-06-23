@@ -1,9 +1,8 @@
-#SVG
+# SVG2Gcode
+
 This contains a G-Code reader, generator and some geometry processing functions.		
 
-###Run
-
------
+## Run
 
 * ```./install.sh``` (for first time usage)
 * put ***.svg*** files in the root directory (only support ***lines*** & ***polylines*** & ***polygons***)
