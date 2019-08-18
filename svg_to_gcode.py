@@ -82,6 +82,8 @@ def svg2points(path):
             })
         else:   # polyline
             ps = child.attrib['points'].split()
+            print(ps)
+            input()
             ps = [ [float(p.split(',')[0]), float(p.split(',')[1])] for p in ps]
             ps_new = []
             for i, p in enumerate(ps):
